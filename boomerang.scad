@@ -9,7 +9,7 @@ holeR = 4.3/2;
 mountOR = 2;
 
 
-% difference() {
+difference() {
   linear_extrude(height=5) {
     import("boomerang-outline.svg", center=true);
   }
@@ -21,9 +21,9 @@ mountOR = 2;
   }
 }
 
-  translate([0, 0, 5]) {
-#linear_extrude(height=10) {
-  import("boomerang-switch-locations.svg", center=true);
-}
+translate([0, 0, 5]) {
+  linear_extrude(height=3) {
+    import("boomerang-switch-locations.svg", center=true);
   }
+}
 
