@@ -20,3 +20,10 @@ mountOR = 2;
     }
   }
 }
+
+  translate([0, 0, 5]) {
+#linear_extrude(height=10) {
+  import("boomerang-switch-locations.svg", center=true);
+}
+  }
+
