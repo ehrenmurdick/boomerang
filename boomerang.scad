@@ -42,3 +42,9 @@ module the_board() {
 }
 
 the_board();
+
+translate([0, 0, -5]) {
+  linear_extrude(height=5) {
+    import("reset-location.svg");
+  }
+}
