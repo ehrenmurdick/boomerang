@@ -11,19 +11,25 @@ mountOR = 2;
 
 difference() {
   linear_extrude(height=1.6) {
-    import("boomerang-outline.svg", center=true);
+    import("boomerang-outline.svg");
   }
 
   translate([0, 0, -1]) {
     linear_extrude(height=3) {
-      import("boomerang-holes.svg", center=true);
+      import("boomerang-holes.svg");
     }
   }
 }
 
 translate([0, 0, 1.6]) {
   linear_extrude(height=6) {
-    import("boomerang-switch-locations.svg", center=true);
+    import("boomerang-switch-locations.svg");
+  }
+}
+
+translate([0, 0, 1.6]) {
+  linear_extrude(height=6) {
+    import("usb-location.svg");
   }
 }
 
