@@ -16,7 +16,7 @@ module the_board() {
         import("boomerang-outline.svg");
       }
 
-      translate([0, 0, -1]) {
+      translate([0, 0, -2]) {
         linear_extrude(height=3) {
           import("boomerang-holes.svg");
         }
@@ -24,7 +24,7 @@ module the_board() {
     }
 
     translate([0, 0, 1.6]) {
-      linear_extrude(height=6) {
+      linear_extrude(height=3) {
         import("boomerang-switch-locations.svg");
       }
     }
@@ -39,12 +39,85 @@ module the_board() {
     }
 
   }
-}
 
-the_board();
-
-translate([0, 0, -5]) {
-  linear_extrude(height=5) {
-    import("reset-location.svg");
+  translate([0, 0, -5]) {
+    linear_extrude(height=5) {
+      import("reset-location.svg");
+    }
   }
 }
+
+module bottom() {
+  difference() {
+    translate([0, 0, -3]) {
+      linear_extrude(height=3) {
+        import("case-outer.svg");
+      }
+    }
+
+    translate([0, 0, -5]) {
+      linear_extrude(height=5) {
+        import("reset-location.svg");
+      }
+    }
+  }
+}
+
+
+module top() {
+  union() {
+    difference() {
+      union() {
+        translate([0, 0, 7]) {
+          linear_extrude(height=3) {
+            import("case-outer.svg");
+          }
+        }
+
+        linear_extrude(height=7) {
+          import("case-outer.svg");
+        }
+      }
+
+      translate([0, 0, 4]) {
+        linear_extrude(height=3) {
+          import("boomerang-outline.svg");
+        }
+      }
+
+      translate([0, 0, 6]) {
+        linear_extrude(height=6) {
+          import("boomerang-switch-locations.svg");
+        }
+      }
+
+      translate([0, 0, -1]) {
+        linear_extrude(height=8) {
+          import("boomerang-outline.svg");
+        }
+      }
+
+      translate([138.554, sh - 22.923, 16.6]) {
+        rotate([90, 0, 0]) {
+          linear_extrude(height=5) {
+            import("usb-profile.svg");
+          }
+        }
+      }
+    }
+    linear_extrude(height=7) {
+      import("boomerang-holes.svg");
+    }
+  }
+}
+
+translate([0, 0, 40]) {
+  top();
+}
+
+translate([0, 0, -40]) {
+  bottom();
+}
+
+  %the_board();
+
