@@ -17,7 +17,7 @@ module the_board() {
       }
 
       translate([0, 0, -2]) {
-        linear_extrude(height=3) {
+        linear_extrude(height=8) {
           import("boomerang-holes.svg");
         }
       }
@@ -40,8 +40,8 @@ module the_board() {
 
   }
 
-  translate([0, 0, -5]) {
-    linear_extrude(height=5) {
+  translate([0, 0, -2]) {
+    linear_extrude(height=2) {
       import("reset-location.svg");
     }
   }
