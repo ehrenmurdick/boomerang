@@ -50,14 +50,18 @@ module the_board() {
 
 module bottom() {
   difference() {
-    translate([0, 0, -3]) {
-      linear_extrude(height=3) {
-        import("case-outer.svg");
+    linear_extrude(height=3) {
+      import("case-outer.svg");
+    }
+
+    translate([0, 0, -2]) {
+      linear_extrude(height=7) {
+        import("screw-drillout.svg");
       }
     }
 
-    translate([0, 0, -5]) {
-      linear_extrude(height=5) {
+    translate([0, 0, -2]) {
+      linear_extrude(height=7) {
         import("reset-location.svg");
       }
     }
