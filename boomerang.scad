@@ -124,7 +124,7 @@ module top() {
       }
     }
 
-    // inner scriw holes
+    // inner screw holes
     translate([0, 0, -1]) {
       linear_extrude(height=8) {
         import("screw-drillout.svg");
