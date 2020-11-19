@@ -52,7 +52,7 @@ module the_board() {
 module bottom() {
   difference() {
     linear_extrude(height=3) {
-      import("case-outer.svg");
+      import("bottom-step.svg");
     }
 
     translate([0, 0, -2]) {
@@ -88,7 +88,6 @@ module top() {
             }
           }
 
-          // sides
           linear_extrude(height=7) {
             import("case-outer.svg");
           }
@@ -105,6 +104,12 @@ module top() {
         translate([0, 0, -1]) {
           linear_extrude(height=8) {
             import("case-inner.svg");
+          }
+        }
+
+        translate([0, 0, -1]) {
+          linear_extrude(height=2) {
+            import("bottom-step.svg");
           }
         }
 
@@ -142,5 +147,5 @@ translate([0, 0, -40]) {
   bottom();
 }
 
-  %the_board();
+%the_board();
 
