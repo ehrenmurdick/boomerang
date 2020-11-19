@@ -61,6 +61,12 @@ module bottom() {
       }
     }
 
+    translate([0, 0, -1]) {
+      linear_extrude(height=2.4) {
+        import("screw-countersink.svg");
+      }
+    }
+
     translate([0, 0, -2]) {
       linear_extrude(height=7) {
         import("reset-location.svg");
