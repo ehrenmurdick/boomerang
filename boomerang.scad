@@ -104,7 +104,7 @@ module top() {
         // body cut out
         translate([0, 0, -1]) {
           linear_extrude(height=8) {
-            import("boomerang-outline.svg");
+            import("case-inner.svg");
           }
         }
 
