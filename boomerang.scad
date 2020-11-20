@@ -1,5 +1,4 @@
-$fn = 6;
-// $fn = 20;
+$fn = 20;
 
 sw = 284.04675;
 sh = 106.65894;
@@ -71,6 +70,32 @@ module bottom() {
       linear_extrude(height=7) {
         import("reset-location.svg");
       }
+    }
+
+    // feets
+
+    translate([10, 35, -1]) {
+      cylinder(h=2, r=4);
+    }
+
+    translate([25, sh-9, -1]) {
+      cylinder(h=2, r=4);
+    }
+
+    translate([sw-10, 35, -1]) {
+      cylinder(h=2, r=4);
+    }
+
+    translate([sw-25, sh-9, -1]) {
+      cylinder(h=2, r=4);
+    }
+
+    translate([(sw/2), sh/2+19, -1]) {
+      cylinder(h=2, r=4);
+    }
+
+    translate([(sw/2), sh/2-45, -1]) {
+      cylinder(h=2, r=4);
     }
   }
 }
