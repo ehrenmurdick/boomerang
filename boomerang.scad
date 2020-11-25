@@ -4,11 +4,6 @@ sw = 284.04675;
 sh = 106.65894;
 
 
-holeSize = 4.3;
-holeR = 4.3/2;
-
-mountOR = 2;
-
 module the_board() {
   union() {
 
@@ -165,11 +160,18 @@ module top() {
 }
 
 translate([0, 0, 40]) {
-  top();
+  intersection() {
+    top();
+    rotate([0, 0, -15]) {
+      translate([-15, 50, 0]) {
+#cube([80, 60, 20]);
+      }
+    }
+  }
 }
 
 translate([0, 0, -40]) {
-  bottom();
+  %bottom();
 }
 
 %the_board();
