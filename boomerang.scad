@@ -66,7 +66,7 @@ module bottom() {
         import("reset-location.svg");
       }
     }
-
+    
     // feets
 
     translate([10, 35, -1]) {
@@ -163,8 +163,8 @@ translate([0, 0, 40]) {
   intersection() {
     top();
     rotate([0, 0, -15]) {
-      translate([-15, 50, 0]) {
-#cube([80, 60, 20]);
+      translate([-15, 20, 0]) {
+#cube([40, 100, 20]);
       }
     }
   }
