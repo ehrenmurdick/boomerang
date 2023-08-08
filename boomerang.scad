@@ -134,10 +134,12 @@ module top() {
         }
 
         // usb jack
-        translate([138.554, sh - 22.923, 16.6]) {
+        translate([138.554, 0, 5]) {
           rotate([90, 0, 0]) {
             linear_extrude(height=5) {
+              offset(0.1) {
               import("usb-profile.svg");
+              }
             }
           }
         }
@@ -160,14 +162,7 @@ module top() {
 }
 
 translate([0, 0, 40]) {
-  intersection() {
-    top();
-    rotate([0, 0, -15]) {
-      translate([-15, 20, 0]) {
-#cube([40, 100, 20]);
-      }
-    }
-  }
+  top();
 }
 
 translate([0, 0, -40]) {
